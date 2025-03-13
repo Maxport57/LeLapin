@@ -39,10 +39,6 @@
             <h3 class="text-xl font-semibold mb-4 text-center">Combien de lapin vois-tu sur la photo qui tourne ?</h3>
             <form id="contactForm">
                 <div class="mb-4">
-                    <label for="name" class="block text-gray-700 font-medium">Nom</label>
-                    <input type="text" id="name" class="w-full p-2 border rounded-lg" required>
-                </div>
-                <div class="mb-4">
                     <label for="question" class="block text-gray-700 font-medium">Réponse</label>
                     <div class="flex items-center space-x-4">
                         <label for="oui" class="text-gray-700">1</label>
@@ -68,10 +64,6 @@
         <section class="mt-10 bg-white p-6 rounded-lg shadow-lg w-96">
             <h3 class="text-xl font-semibold mb-4 text-center">Est-ce que tu veux être mon lapin ?</h3>
             <form id="contactForm">
-                <div class="mb-4">
-                    <label for="name" class="block text-gray-700 font-medium">Nom</label>
-                    <input type="text" id="name" class="w-full p-2 border rounded-lg" required>
-                </div>
                 <div class="mb-4">
                     <label for="question" class="block text-gray-700 font-medium">Réponse</label>
                     <div class="flex items-center space-x-4">
@@ -99,10 +91,7 @@
     <script>
         document.getElementById("contactForm").addEventListener("submit", function(event) {
             event.preventDefault();
-            const name = document.getElementById("name").value;
-            const question = document.querySelector('input[name="question"]:checked').value;
-            
-            console.log("Nom:", name);
+
             console.log("Réponse:", question);
 
             alert("Formulaire soumis avec succès ! Les informations sont enregistrées dans la console.");

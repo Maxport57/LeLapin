@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon super lapin</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes rotateBasket {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(360deg); }
+        }
+        .rotate {
+            animation: rotateBasket 5s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-gray-900 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-6">
+            <h1 class="text-2xl font-bold">Mon super lapin</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-gray-400">Accueil</a></li>
+                    <li><a href="#" class="hover:text-gray-400">Produits</a></li>
+                    <li><a href="#" class="hover:text-gray-400">À propos</a></li>
+                    <li><a href="#" class="hover:text-gray-400">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <!-- Contenu principal -->
+    <main class="flex flex-col items-center justify-center min-h-screen">
+        <h2 class="text-3xl font-semibold mb-6">Question pour un lapin</h2>
+        <img src="LAPIN.jpg" alt="Lapin tournant" class="rotate w-48 h-48">
+        
+        <!-- Formulaire de contact -->
+        <section class="mt-10 bg-white p-6 rounded-lg shadow-lg w-96">
+            <h3 class="text-xl font-semibold mb-4 text-center">Combien de lapin vois-tu sur la photo qui tourne ?</h3>
+            <form id="contactForm">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-medium">Nom</label>
+                    <input type="text" id="name" class="w-full p-2 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-medium">Email</label>
+                    <input type="email" id="email" class="w-full p-2 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label for="question" class="block text-gray-700 font-medium">Réponse</label>
+                    <div class="flex items-center space-x-4">
+                        <label for="oui" class="text-gray-700">1</label>
+                        <input type="radio" id="oui" name="question" value="oui" class="p-2 border rounded-lg" required>
+                        <label for="non" class="text-gray-700">2</label>
+                        <input type="radio" id="non" name="question" value="non" class="p-2 border rounded-lg" required>
+                        <label for="non" class="text-gray-700">Aucun</label>
+                        <input type="radio" id="non" name="question" value="non" class="p-2 border rounded-lg" required>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Contenu secondaire -->
+    <main class="flex flex-col items-center justify-center min-h-screen">
+        <h2 class="text-3xl font-semibold mb-6">Question 2 pour un lapin</h2>
+        <!-- Image Lapin2 avec taille ajustée -->
+        <img src="LAPIN2.jpg" alt="Lapin tournant" class="w-32 h-32">  <!-- Changement ici pour plus petite taille -->
+        
+        <!-- Formulaire de contact -->
+        <section class="mt-10 bg-white p-6 rounded-lg shadow-lg w-96">
+            <h3 class="text-xl font-semibold mb-4 text-center">Est-ce que tu veux être mon lapin ?</h3>
+            <form id="contactForm">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 font-medium">Nom</label>
+                    <input type="text" id="name" class="w-full p-2 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 font-medium">Email</label>
+                    <input type="email" id="email" class="w-full p-2 border rounded-lg" required>
+                </div>
+                <div class="mb-4">
+                    <label for="question" class="block text-gray-700 font-medium">Réponse</label>
+                    <div class="flex items-center space-x-4">
+                        <label for="oui" class="text-gray-700">Oui</label>
+                        <input type="radio" id="oui" name="question" value="oui" class="p-2 border rounded-lg" required>
+                        <label for="non" class="text-gray-700">Non</label>
+                        <input type="radio" id="non" name="question" value="non" class="p-2 border rounded-lg" required>
+                    </div>
+                </div>
+                <button type="submit" class="w-full bg-gray-900 text-white py-2 rounded-lg hover:bg-gray-700">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white text-center py-4 mt-10">
+        <p>&copy; 2025 Mon super lapin - Tous droits réservés</p>
+        <nav class="mt-2">
+            <a href="#" class="text-gray-400 hover:text-white mx-2">Mentions légales</a>
+            <a href="#" class="text-gray-400 hover:text-white mx-2">Politique de confidentialité</a>
+            <a href="#" class="text-gray-400 hover:text-white mx-2">Contact</a>
+        </nav>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const question = document.querySelector('input[name="question"]:checked').value;
+            
+            console.log("Nom:", name);
+            console.log("Email:", email);
+            console.log("Réponse:", question);
+
+            alert("Formulaire soumis avec succès ! Les informations sont enregistrées dans la console.");
+        });
+    </script>
+</body>
+</html>
